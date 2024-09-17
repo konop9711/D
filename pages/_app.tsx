@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
 // This is the chain your dApp will work on.
-const activeChain = "mumbai";
+const activeChain = "base";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,3 +17,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
+  return (
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      margin: "20px auto",
+      width: "500px",
+    }}>
+      <h1>ERC-721 Staking App</h1>
+      <ConnectEmbed
+        client={client}
+        chain={chain}
+      />
+      <Staking />
+    </div>
+  );
+}
